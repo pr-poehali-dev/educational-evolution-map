@@ -317,131 +317,278 @@ const Index = () => {
           </TabsList>
 
           <TabsContent value="trends" className="animate-fade-in space-y-8">
+            
+            {/* 1. Жанровая циклическая эволюция */}
             <Card className="p-8">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 font-serif">
-                <Icon name="TrendingUp" size={24} />
-                Композиционная векторная эволюция учебной книги
+                <Icon name="RefreshCw" size={24} />
+                1. Жанровая циклическая эволюция учебной книги
               </h3>
-              <div className="mb-6">
-                <img 
-                  src="https://cdn.poehali.dev/files/3.png" 
-                  alt="Композиционная эволюция" 
-                  className="w-full rounded-lg shadow-md"
-                />
-              </div>
-              <p className="text-muted-foreground leading-relaxed">
-                С точки зрения композиции русские учебные книги еще в XII-XIII веках строились авторами по 
-                принципу «от простого к сложному», и сохранили эту тенденцию на протяжении почти тысячелетия, 
-                несмотря на различное содержательное и идеологическое наполнение. Одновременно на протяжении всего 
-                исследуемого периода наблюдается система постепенного усвоения учебного материала по принципу 
-                «информация → тренировка → (контроль)». Схема представлена на Рисунке 2.
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Жанровая эволюция учебной литературы демонстрирует цикличность. Так, в современных терминах, 
+                первые учебные книги средних веков можно назвать хрестоматиями, так как они представляли собой 
+                сборники (изборники) текстов, не адаптированных для образовательных целей, которые использовались 
+                учителями как вспомогательный материал. Развитие образования в XVII-XVIII веках привело к появлению 
+                полноценных учебников, которые с XIX веке были дополнены методическими материалами для педагогов.
               </p>
-              <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div className="p-4 bg-blue-50 rounded-lg">
-                  <div className="font-semibold mb-2 flex items-center gap-2">
-                    <Icon name="Info" size={18} className="text-blue-600" />
-                    ИНФОРМАЦИЯ
-                  </div>
-                  <p className="text-sm text-muted-foreground">теоретический материал</p>
-                </div>
-                <div className="p-4 bg-green-50 rounded-lg">
-                  <div className="font-semibold mb-2 flex items-center gap-2">
-                    <Icon name="Zap" size={18} className="text-green-600" />
-                    ПРОДУКТИВНАЯ ДЕЯТЕЛЬНОСТЬ
-                  </div>
-                  <p className="text-sm text-muted-foreground">упражнения, тренировка</p>
-                </div>
-                <div className="p-4 bg-amber-50 rounded-lg">
-                  <div className="font-semibold mb-2 flex items-center gap-2">
-                    <Icon name="CheckCircle" size={18} className="text-amber-600" />
-                    КОНТРОЛЬ
-                  </div>
-                  <p className="text-sm text-muted-foreground">проверка усвоения, творческие задания</p>
-                </div>
+              
+              <div className="relative flex items-center justify-center py-12">
+                <svg className="w-full max-w-2xl" viewBox="0 0 600 400">
+                  {/* Центральный учебник */}
+                  <ellipse cx="300" cy="200" rx="120" ry="80" fill="#60a5fa" className="animate-pulse" style={{ animationDuration: '3s' }} />
+                  <text x="300" y="195" textAnchor="middle" fill="white" fontSize="16" fontWeight="bold">УЧЕБНИК</text>
+                  
+                  {/* Хрестоматийные тексты (вверху) */}
+                  <ellipse cx="300" cy="60" rx="140" ry="50" fill="#3b82f6" />
+                  <text x="300" y="50" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">ХРЕСТОМАТИЙНЫЕ</text>
+                  <text x="300" y="67" textAnchor="middle" fill="white" fontSize="12" fontWeight="bold">ТЕКСТЫ (дополнительный,</text>
+                  <text x="300" y="82" textAnchor="middle" fill="white" fontSize="11" fontWeight="normal">несистематизированный</text>
+                  <text x="300" y="95" textAnchor="middle" fill="white" fontSize="11" fontWeight="normal">материал)</text>
+                  
+                  {/* Методические рекомендации (слева) */}
+                  <ellipse cx="80" cy="200" rx="70" ry="80" fill="#3b82f6" />
+                  <text x="80" y="190" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">МЕТОДИЧЕСКИЕ</text>
+                  <text x="80" y="205" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">РЕКОМЕНДАЦИИ</text>
+                  <text x="80" y="220" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">ПЕДАГОГАМ</text>
+                  <text x="80" y="235" textAnchor="middle" fill="white" fontSize="9">(пособия для учителей)</text>
+                  
+                  {/* Задания и упражнения (справа) */}
+                  <ellipse cx="520" cy="200" rx="70" ry="80" fill="#3b82f6" />
+                  <text x="520" y="185" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">ЗАДАНИЯ И</text>
+                  <text x="520" y="200" textAnchor="middle" fill="white" fontSize="11" fontWeight="bold">УПРАЖНЕНИЯ</text>
+                  <text x="520" y="220" textAnchor="middle" fill="white" fontSize="9">(учебные пособия и</text>
+                  <text x="520" y="233" textAnchor="middle" fill="white" fontSize="9">рабочие тетради)</text>
+                  
+                  {/* Стрелки */}
+                  <defs>
+                    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                      <polygon points="0 0, 10 3.5, 0 7" fill="#94a3b8" />
+                    </marker>
+                  </defs>
+                  
+                  <path d="M 300 120 L 300 140" stroke="#94a3b8" strokeWidth="3" fill="none" markerEnd="url(#arrowhead)" />
+                  <path d="M 155 180 L 180 190" stroke="#94a3b8" strokeWidth="3" fill="none" markerEnd="url(#arrowhead)" />
+                  <path d="M 445 180 L 420 190" stroke="#94a3b8" strokeWidth="3" fill="none" markerEnd="url(#arrowhead)" />
+                  
+                  <path d="M 180 210 L 155 220" stroke="#94a3b8" strokeWidth="3" fill="none" markerEnd="url(#arrowhead)" />
+                  <path d="M 420 210 L 445 220" stroke="#94a3b8" strokeWidth="3" fill="none" markerEnd="url(#arrowhead)" />
+                  <path d="M 300 280 L 300 350 Q 300 370, 320 370 L 520 370 Q 540 370, 540 350 L 540 280" stroke="#94a3b8" strokeWidth="3" fill="none" markerEnd="url(#arrowhead)" />
+                  <path d="M 300 280 L 300 350 Q 300 370, 280 370 L 80 370 Q 60 370, 60 350 L 60 280" stroke="#94a3b8" strokeWidth="3" fill="none" markerEnd="url(#arrowhead)" />
+                </svg>
               </div>
+              
+              <p className="text-sm text-muted-foreground italic text-center">
+                Рис. 1. Жанровая циклическая эволюция учебной книги — от разрозненных материалов к единому учебнику
+              </p>
             </Card>
 
+            {/* 2. Композиционная векторная эволюция */}
+            <Card className="p-8">
+              <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 font-serif">
+                <Icon name="ArrowRight" size={24} />
+                2. Композиционная векторная эволюция учебной книги
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                С точки зрения композиции русские учебные книги еще в XII-XIII веках строились авторами по 
+                принципу «от простого к сложному», и сохранили эту тенденцию на протяжении почти тысячелетия. 
+                Одновременно на протяжении всего исследуемого периода наблюдается система постепенного усвоения 
+                учебного материала по принципу «информация → тренировка → (контроль)».
+              </p>
+              
+              <div className="relative py-8">
+                <div className="flex items-center justify-center gap-6 mb-8">
+                  <div className="relative group">
+                    <div className="w-48 h-32 bg-blue-500 rounded-lg flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
+                      <div className="text-center text-white">
+                        <Icon name="Info" size={32} className="mx-auto mb-2" />
+                        <div className="font-bold text-lg">ИНФОРМАЦИЯ:</div>
+                        <div className="text-sm">теоретический</div>
+                        <div className="text-sm">материал</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <Icon name="ArrowRight" size={40} className="text-primary animate-pulse" />
+                  
+                  <div className="relative group">
+                    <div className="w-48 h-32 bg-green-500 rounded-lg flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
+                      <div className="text-center text-white">
+                        <Icon name="Zap" size={32} className="mx-auto mb-2" />
+                        <div className="font-bold text-sm">ПРОДУКТИВНАЯ</div>
+                        <div className="font-bold text-sm">ДЕЯТЕЛЬНОСТЬ:</div>
+                        <div className="text-xs">упражнения, тренировка</div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <Icon name="ArrowRight" size={40} className="text-primary animate-pulse" />
+                  
+                  <div className="relative group">
+                    <div className="w-48 h-32 bg-amber-500 rounded-lg flex items-center justify-center shadow-lg hover:scale-105 transition-transform">
+                      <div className="text-center text-white">
+                        <Icon name="CheckCircle" size={32} className="mx-auto mb-2" />
+                        <div className="font-bold text-lg">КОНТРОЛЬ:</div>
+                        <div className="text-sm">проверка усвоения,</div>
+                        <div className="text-sm">творческие задания</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+              <p className="text-sm text-muted-foreground italic text-center">
+                Рис. 2. Композиционная векторная эволюция учебной книги — единый вектор «от простого к сложному»
+              </p>
+            </Card>
+
+            {/* 3. Содержательная волновая эволюция */}
             <Card className="p-8">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 font-serif">
                 <Icon name="Activity" size={24} />
-                Содержательная волновая эволюция учебной книги
+                3. Содержательная волновая эволюция учебной книги
               </h3>
-              <div className="mb-6">
-                <img 
-                  src="https://cdn.poehali.dev/files/3.png" 
-                  alt="Содержательная эволюция" 
-                  className="w-full rounded-lg shadow-md"
-                />
-              </div>
-              <p className="text-muted-foreground leading-relaxed mb-4">
-                Динамика содержания учебного материала, на наш взгляд, развивалась волнообразно с 
-                постепенным ускорением. За основу взята характеристика унификации – диверсификация материала 
-                учебной книги, в том числе с позиции транслируемой идеологии. Так, первым трем периодам развития 
-                учебной литературы свойственна высокая степень религиозно-нравственного содержания и универсальная 
-                грамматика материала и познаний православной культуры.
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                Динамика содержания учебного материала развивалась волнообразно с постепенным ускорением. 
+                За основу взята характеристика унификации – диверсификация материала учебной книги. 
+                Так, первым трем периодам развития учебной литературы свойственна высокая степень 
+                религиозно-нравственного содержания и универсальная грамматика материала и познаний православной культуры.
               </p>
-              <div className="bg-indigo-50 p-6 rounded-lg">
-                <h4 className="font-semibold mb-3 flex items-center gap-2">
-                  <Icon name="BarChart3" size={20} className="text-indigo-600" />
-                  Динамика содержания по периодам
-                </h4>
-                <div className="space-y-2 text-sm text-muted-foreground">
-                  <p><strong>10-16 век:</strong> Высокое религиозное содержание</p>
-                  <p><strong>17-19 век:</strong> Снижение религиозности, диверсификация</p>
-                  <p><strong>20 век:</strong> Пик унификации, марксистская идеология</p>
-                  <p><strong>21 век:</strong> Возврат к разнообразию подходов</p>
+              
+              <div className="relative py-8 bg-gradient-to-br from-indigo-50 to-blue-50 rounded-lg p-6">
+                <svg className="w-full" viewBox="0 0 800 300" preserveAspectRatio="xMidYMid meet">
+                  {/* Сетка */}
+                  <line x1="50" y1="250" x2="750" y2="250" stroke="#cbd5e1" strokeWidth="2" />
+                  <line x1="50" y1="50" x2="50" y2="250" stroke="#cbd5e1" strokeWidth="2" />
+                  
+                  {/* Подписи периодов */}
+                  <text x="150" y="275" textAnchor="middle" fontSize="14" fill="#475569">10-16 век</text>
+                  <text x="350" y="275" textAnchor="middle" fontSize="14" fill="#475569">17-19 век</text>
+                  <text x="550" y="275" textAnchor="middle" fontSize="14" fill="#475569">20 век</text>
+                  <text x="700" y="275" textAnchor="middle" fontSize="14" fill="#475569">21 век</text>
+                  
+                  {/* Ось Y */}
+                  <text x="35" y="50" textAnchor="end" fontSize="11" fill="#475569">Высокая</text>
+                  <text x="35" y="155" textAnchor="end" fontSize="11" fill="#475569">Средняя</text>
+                  <text x="35" y="250" textAnchor="end" fontSize="11" fill="#475569">Низкая</text>
+                  
+                  {/* Волновая линия */}
+                  <path 
+                    d="M 50,80 Q 150,60 150,70 T 350,180 T 550,60 T 700,200" 
+                    stroke="#3b82f6" 
+                    strokeWidth="4" 
+                    fill="none"
+                    className="animate-pulse"
+                  />
+                  
+                  {/* Точки данных */}
+                  <circle cx="150" cy="70" r="8" fill="#2563eb" className="animate-pulse" />
+                  <circle cx="350" cy="180" r="8" fill="#2563eb" className="animate-pulse" />
+                  <circle cx="550" cy="60" r="8" fill="#2563eb" className="animate-pulse" />
+                  <circle cx="700" cy="200" r="8" fill="#2563eb" className="animate-pulse" />
+                  
+                  {/* Легенда */}
+                  <line x1="600" y1="30" x2="650" y2="30" stroke="#3b82f6" strokeWidth="3" />
+                  <text x="660" y="35" fontSize="12" fill="#475569">содержание учебной книги</text>
+                </svg>
+              </div>
+              
+              <p className="text-sm text-muted-foreground italic text-center mt-4">
+                Рис. 3. Содержательная волновая эволюция учебной книги — от унификации к разнообразию
+              </p>
+              
+              <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div className="p-4 bg-blue-50 rounded-lg">
+                  <div className="font-semibold mb-2">📖 10-16 века</div>
+                  <p className="text-sm text-muted-foreground">Высокое религиозное содержание, универсальная грамматика</p>
+                </div>
+                <div className="p-4 bg-purple-50 rounded-lg">
+                  <div className="font-semibold mb-2">📚 17-19 века</div>
+                  <p className="text-sm text-muted-foreground">Снижение религиозности, диверсификация по дисциплинам</p>
+                </div>
+                <div className="p-4 bg-red-50 rounded-lg">
+                  <div className="font-semibold mb-2">📕 20 век</div>
+                  <p className="text-sm text-muted-foreground">Пик унификации, марксистско-ленинская идеология</p>
+                </div>
+                <div className="p-4 bg-cyan-50 rounded-lg">
+                  <div className="font-semibold mb-2">💻 21 век</div>
+                  <p className="text-sm text-muted-foreground">Возврат к разнообразию, цифровизация</p>
                 </div>
               </div>
             </Card>
 
+            {/* 4. Методическая многовекторная эволюция */}
             <Card className="p-8">
               <h3 className="text-2xl font-bold mb-6 flex items-center gap-3 font-serif">
-                <Icon name="Layers" size={24} />
-                Методическая многовекторная эволюция учебной книги
+                <Icon name="Sparkles" size={24} />
+                4. Методическая многовекторная эволюция учебной книги
               </h3>
-              <div className="mb-6">
-                <img 
-                  src="https://cdn.poehali.dev/files/4.png" 
-                  alt="Методическая эволюция" 
-                  className="w-full rounded-lg shadow-md"
-                />
-              </div>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-8">
                 Развитие методических подходов к организации учебной книги показывает устойчивую тенденцию к поиску 
-                новых решений. Сохраняя базовый принцип «от простого к сложному», в целом педагоги и авторы учебников 
-                на протяжении веков не оставляют попыток найти и внедрить успешные методические приемы и технологии.
+                новых решений. Сохраняя базовый принцип «от простого к сложному», педагоги и авторы учебников 
+                на протяжении веков не оставляют попыток найти и внедрить успешные методические приемы. 
+                Долгое время ведущим методом было пассивное заучивание и воспроизведение материала. 
+                Но с усложнением содержания образования стало очевидно, что такой подход не дает нужного результата.
               </p>
-              <div className="flex items-center justify-center gap-8 py-6">
-                <div className="text-center">
-                  <div className="w-32 h-32 rounded-full bg-blue-500 flex items-center justify-center mb-3">
-                    <span className="text-white font-bold text-lg">ЕДИНЫЙ<br/>МЕТОД</span>
+              
+              <div className="relative py-12">
+                <div className="flex items-center justify-center gap-12">
+                  {/* Единый метод (слева) */}
+                  <div className="text-center">
+                    <div className="relative">
+                      <div className="w-40 h-40 rounded-full bg-blue-500 flex items-center justify-center shadow-xl animate-pulse mb-4">
+                        <div className="text-white font-bold text-center px-4">
+                          <div className="text-lg">ЕДИНЫЙ</div>
+                          <div className="text-lg">МЕТОД</div>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground mt-2">заучивание,<br/>повторение</p>
                   </div>
-                  <p className="text-sm text-muted-foreground">заучивание,<br/>повторение</p>
-                </div>
-                <div className="flex flex-col items-center gap-2">
-                  <Icon name="ArrowRight" size={32} className="text-primary" />
-                  <Icon name="ArrowRight" size={32} className="text-primary" />
-                  <Icon name="ArrowRight" size={32} className="text-primary" />
-                </div>
-                <div className="text-center">
-                  <div className="flex flex-wrap gap-2 justify-center mb-3">
-                    {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((i) => (
-                      <div 
-                        key={i} 
-                        className="w-8 h-8 rounded-full bg-blue-600 opacity-80"
-                        style={{ width: `${Math.random() * 20 + 20}px`, height: `${Math.random() * 20 + 20}px` }}
-                      />
-                    ))}
+                  
+                  {/* Стрелки перехода */}
+                  <div className="flex flex-col gap-2">
+                    <Icon name="ArrowRight" size={36} className="text-primary" />
+                    <Icon name="ArrowRight" size={36} className="text-primary" />
+                    <Icon name="ArrowRight" size={36} className="text-primary" />
                   </div>
-                  <p className="text-sm text-muted-foreground font-semibold">МЕТОДИЧЕСКОЕ<br/>РАЗНООБРАЗИЕ</p>
+                  
+                  {/* Методическое разнообразие (справа) */}
+                  <div className="text-center">
+                    <div className="relative w-64 h-64 flex items-center justify-center">
+                      {/* Множество кругов разного размера */}
+                      <div className="absolute w-16 h-16 rounded-full bg-blue-600 top-0 left-12 animate-pulse" style={{ animationDelay: '0s' }}></div>
+                      <div className="absolute w-24 h-24 rounded-full bg-blue-500 top-8 right-4 animate-pulse" style={{ animationDelay: '0.2s' }}></div>
+                      <div className="absolute w-12 h-12 rounded-full bg-blue-700 top-16 left-4 animate-pulse" style={{ animationDelay: '0.4s' }}></div>
+                      <div className="absolute w-20 h-20 rounded-full bg-blue-400 bottom-16 left-16 animate-pulse" style={{ animationDelay: '0.6s' }}></div>
+                      <div className="absolute w-14 h-14 rounded-full bg-blue-600 bottom-8 right-12 animate-pulse" style={{ animationDelay: '0.8s' }}></div>
+                      <div className="absolute w-18 h-18 rounded-full bg-blue-500 bottom-4 left-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
+                      <div className="absolute w-16 h-16 rounded-full bg-blue-700 top-20 right-16 animate-pulse" style={{ animationDelay: '1.2s' }}></div>
+                      <div className="absolute w-22 h-22 rounded-full bg-blue-400 top-12 left-24 animate-pulse" style={{ animationDelay: '1.4s' }}></div>
+                      <div className="absolute w-28 h-28 rounded-full bg-blue-600 opacity-60" style={{ top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}></div>
+                    </div>
+                    <p className="text-sm font-semibold text-foreground mt-2">МЕТОДИЧЕСКОЕ<br/>РАЗНООБРАЗИЕ</p>
+                  </div>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground italic mt-4">
-                Долгое время на начальных этапах ведущим методом было пассивное заучивание и воспроизведение материала. 
-                Но с усложнением содержания образования стало очевидно, что такой подход не дает нужного результата, 
-                поэтому происходит постоянная смена ведущих методов обучения, а вместе с ними и организация учебника.
+              
+              <p className="text-sm text-muted-foreground italic text-center mt-6">
+                Рис. 4. Методическая многовекторная эволюция учебной книги — от единого подхода к разнообразию методов
               </p>
+              
+              <div className="mt-8 bg-gradient-to-br from-purple-50 to-pink-50 p-6 rounded-lg">
+                <h4 className="font-semibold mb-3 flex items-center gap-2">
+                  <Icon name="Lightbulb" size={20} className="text-purple-600" />
+                  Примеры методических подходов в истории
+                </h4>
+                <div className="space-y-2 text-sm text-muted-foreground">
+                  <p><strong>• Теоретическое переупрощенность:</strong> пассивное заучивание наизусть и воспроизведение</p>
+                  <p><strong>• Наглядность:</strong> проектно-исследовательские задания, эффективность доказана</p>
+                  <p><strong>• Геймификация:</strong> игровые механики в современных учебниках</p>
+                  <p><strong>• Дифференциация:</strong> адаптация под разные уровни подготовки</p>
+                </div>
+              </div>
             </Card>
+
           </TabsContent>
 
           <TabsContent value="editions" className="animate-fade-in">
